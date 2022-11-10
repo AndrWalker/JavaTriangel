@@ -98,5 +98,11 @@ public double getSquare() {
 public String getType() {
 	return this.triangelType;
 }
-
+@Override
+public String toString() {
+    return "Point1= " + pointOne
+            + "Point2= " + pointTwo 
+            + "Point3= " + pointThree
+            + "Triangel Square =" + getSquare() + "]";
+}
 }

@@ -53,5 +53,11 @@ public boolean equals(Object obj) {
 	return point.coordinateX==this.coordinateX &&
 			point.coordinateY==this.coordinateY;
 }
+@Override
+public String toString() {
+    return "(" + coordinateX
+            + " " + coordinateY
+            + ")";
+}
 
 }

@@ -6,9 +6,8 @@ public class main {
 	public static void main(String args[ ]) {
 		ArrayList<Triangel> list = new ArrayList<>();
 		int numRectan=0,numRavno=0,numRavnobed=0,numRandom=0;
-		double maxSquareRectan=0,maxSquareRavno=0,maxSquareRavnobed=0,maxSquareRandom=0;
-		double minSquareRectan=Double.MAX_VALUE,minSquareRavno=Double.MAX_VALUE,
-				minSquareRavnobed=Double.MAX_VALUE,minSquareRandom=Double.MAX_VALUE;
+		Triangel maxSquareRectan=null,maxSquareRavno=null,maxSquareRavnobed=null,maxSquareRandom=null;
+		Triangel minSquareRectan=null,minSquareRavno=null,minSquareRavnobed=null,minSquareRandom=null;
 		
 		list.add(new Triangel(new Point(0,1),new Point(0,0),new Point(1,0)));
 		list.add(new Triangel(new Point(0,10),new Point(0,0),new Point(5,0)));
@@ -23,41 +22,73 @@ public class main {
 			switch(Tre.getType()){
 			case "Прямоугольный":
 				numRectan++;
-				if(Tre.getSquare()>maxSquareRectan)
-					maxSquareRectan=Tre.getSquare();
-				if(Tre.getSquare()<minSquareRectan)
-					minSquareRectan=Tre.getSquare();
+				if(maxSquareRectan==null) {
+					maxSquareRectan=Tre;
+					minSquareRectan=Tre;
+				}
+				if(Tre.getSquare()>maxSquareRectan.getSquare())
+					maxSquareRectan=Tre;
+				if(Tre.getSquare()<minSquareRectan.getSquare())
+					minSquareRectan=Tre;
 				break;
 			case "Равнобедренный":
 				numRavnobed++;
-				if(Tre.getSquare()>maxSquareRavnobed)
-					maxSquareRavnobed=Tre.getSquare();
-				if(Tre.getSquare()<minSquareRavnobed)
-					minSquareRavnobed=Tre.getSquare();
+				if(maxSquareRavnobed==null) {
+					maxSquareRavnobed=Tre;
+					minSquareRavnobed=Tre;
+				}
+				if(Tre.getSquare()>maxSquareRavnobed.getSquare())
+					maxSquareRavnobed=Tre;
+				if(Tre.getSquare()<minSquareRavnobed.getSquare())
+					minSquareRavnobed=Tre;
 				break;
 			case "Равносториний":
 				numRavno++;
-				if(Tre.getSquare()>maxSquareRavno)
-					maxSquareRavno=Tre.getSquare();
-				if(Tre.getSquare()<minSquareRavno)
-					minSquareRavno=Tre.getSquare();
+				if(maxSquareRavno==null) {
+					maxSquareRavno=Tre;
+				    minSquareRavno=Tre;
+				    }
+				if(Tre.getSquare()>maxSquareRavno.getSquare())
+					maxSquareRavno=Tre;
+				if(Tre.getSquare()<minSquareRavno.getSquare())
+					minSquareRavno=Tre;
 				break;
 			case "Произвольный":
 				numRandom++;
-				if(Tre.getSquare()>maxSquareRandom)
-					maxSquareRandom=Tre.getSquare();
-				if(Tre.getSquare()<minSquareRandom)
-					minSquareRandom=Tre.getSquare();
+				if(maxSquareRandom==null) {
+					maxSquareRandom=Tre;
+				    minSquareRandom=Tre;
+				    }
+				if(Tre.getSquare()>maxSquareRandom.getSquare())
+					maxSquareRandom=Tre;
+				if(Tre.getSquare()<minSquareRandom.getSquare())
+					minSquareRandom=Tre;
 				break;
 			}
 		}
-		if(numRectan!=0)
-		System.out.println("Прямоугольных: "+numRectan+" Максималная: "+maxSquareRectan+" Минимальная: "+minSquareRectan);
-		if(numRavnobed!=0)
-		System.out.println("Равнобедренных: "+numRavnobed+" Максималная: "+maxSquareRavnobed+" Минимальная: "+minSquareRavnobed);
-		if(numRavno!=0)
-		System.out.println("Равносториних: "+numRavno+" Максималная: "+maxSquareRavno+" Минимальная: "+minSquareRavno);
-		if(numRandom!=0)
-		System.out.println("Произвольных: "+numRandom+" Максималная: "+maxSquareRandom+" Минимальная: "+minSquareRandom);
+		
+		if(numRectan!=0) {
+		System.out.println("Прямоугольных: "+numRectan);
+		System.out.println("Максималный: "+maxSquareRectan);
+		System.out.println("Минимальный: "+minSquareRectan);
+		}
+		if(numRavnobed!=0) {
+		
+		System.out.println("Прямоугольных: "+numRavnobed);
+		System.out.println("Максималный: "+maxSquareRavnobed);
+		System.out.println("Минимальный: "+minSquareRavnobed);
+		}
+		if(numRavno!=0) {
+		System.out.println("Прямоугольных: "+numRavno);
+		System.out.println("Максималный: "+maxSquareRavno);
+		System.out.println("Минимальный: "+minSquareRavno);
+		}
+		if(numRandom!=0) {
+		System.out.println("Прямоугольных: "+numRandom);
+		System.out.println("Максималный: "+maxSquareRandom);
+		System.out.println("Минимальный: "+minSquareRandom);
+		}
+		
+		
 	}
 }

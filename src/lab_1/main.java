@@ -74,17 +74,17 @@ public class main {
 		}
 		if(numRavnobed!=0) {
 		
-		System.out.println("Прямоугольных: "+numRavnobed);
+		System.out.println("Равнобедренных: "+numRavnobed);
 		System.out.println("Максималный: "+maxSquareRavnobed);
 		System.out.println("Минимальный: "+minSquareRavnobed);
 		}
 		if(numRavno!=0) {
-		System.out.println("Прямоугольных: "+numRavno);
+		System.out.println("Равностороних: "+numRavno);
 		System.out.println("Максималный: "+maxSquareRavno);
 		System.out.println("Минимальный: "+minSquareRavno);
 		}
 		if(numRandom!=0) {
-		System.out.println("Прямоугольных: "+numRandom);
+		System.out.println("Произвольных: "+numRandom);
 		System.out.println("Максималный: "+maxSquareRandom);
 		System.out.println("Минимальный: "+minSquareRandom);
 		}
